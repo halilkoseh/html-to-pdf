@@ -1,8 +1,16 @@
+
 <?php
+
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PdfController;
 
-// Route to display the phoneBill view
-Route::get('/', [PdfController::class, 'showPhoneBill']);
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Route to generate the PDF on form submission
-Route::post('/generate-pdf', [PdfController::class, 'generatePdf'])->name('generate-pdf');
+
+$html = view('welcome')->render();
+
+
+Route::get('/pdf', [PdfController::class, 'downloadPdf'])->name('user.pdf');
+?>

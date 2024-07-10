@@ -35,4 +35,17 @@ return [
         ],
     ],
 
+    'dompdf' => [
+    'options' => [
+        'isHtml5ParserEnabled' => true,
+        'isPhpEnabled' => true,
+        'defaultFont' => 'DejaVu Sans',
+        'fontDir' => storage_path('fonts/'), // make sure this directory exists
+        'fontCache' => storage_path('fonts/'),
+        'isFontSubsettingEnabled' => true,
+        'isRemoteEnabled' => true,
+    ],
+],
+
+
 ];
